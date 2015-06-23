@@ -1,0 +1,469 @@
+/* RESET
+-----------------------------------------------*/
+
+body, div, dl, dt, dd, ul, ol, li,
+h1, h2, h3, h4, h5, h6, pre, code, form,
+fieldset, legend, input, textarea, p, blockquote,
+th, td { margin: 0; padding: 0; }
+table { border-collapse: collapse; border-spacing: 0; }
+fieldset, img { border: 0; }
+address, caption, dfn, th, var { font-style: normal; font-weight: normal; }
+li { list-style: none; }
+caption, th { text-align: left; }
+h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: normal; }
+
+/* GLOBAL
+-----------------------------------------------*/
+.start-hidden {
+    display: none;
+}
+
+html,
+body {
+    height: 100%;
+    /*background-color: #454545;*/
+    font-family: 'Open Sans', sans-serif;
+}
+body {
+    margin: 0;
+    padding: 50px;
+    color: #3f3f3f;
+    text-align: center;
+    background-position: left top;
+    background-repeat: repeat-y;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    /*background-size: cover;*/
+    background-size: cover;
+    /*box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);*/
+    position: relative;
+}
+.matte {
+    background-color: rgba(0, 0, 0, 0.1);
+    /*background-color: rgba(255, 255, 255, 0.3);*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.wrapper {
+    position: relative;
+    width: 100%;
+    margin: auto;
+}
+.article {
+    width: 100%;
+    padding: 20px 0;
+    margin: auto;
+    margin-bottom: 50px;
+    background-color: rgba(255, 255, 255, 0.90);
+    max-width: 950px;
+    border-radius: 3px;
+    border: 6px solid rgba(42, 42, 42, 0.91);
+}
+h1 {
+    font-weight: 800;
+    font-size: 70px;
+    text-shadow: rgba(255, 184, 0, 0.93) 4px 5px 0;
+    /*text-shadow: rgba(255, 19, 0, 0.62) 4px 5px 0;*/
+}
+h2 {
+    font-size: 38px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+a {
+    text-decoration: none;
+}
+
+
+/* Masthead
+-----------------------------------------------*/
+
+.header {
+    height: 380px;
+}
+.header .masthead {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    top: -20px;
+}
+.header .masthead .icon {
+    width: 15%;
+    font-size: 26px;
+    /*top: -10px;*/
+}
+.header .masthead .icon i {
+    top: -10px;
+}
+.header .masthead .subhead {
+    width: 70%;
+}
+
+.header .masthead .icon.left {
+    text-align: right;
+}
+.header .masthead .icon.left i {
+    position: relative;
+    right: -5px;
+}
+.header .masthead .icon.right {
+    text-align: left;
+}
+.header .masthead .icon.right i {
+    position: relative;
+}
+
+
+/* Strong Coffee Good Food
+-----------------------------------------------*/
+
+.masthead .subhead {
+    white-space: nowrap;
+}
+
+.masthead .subhead h2 {
+    /*border: 1px grey dotted;*/
+    display: inline-block;
+}
+
+.fancy {
+    display: block;
+    font-size: 42px;
+    font-family: Damion;
+    /*margin: 16px;*/
+    position: relative;
+    top: -32px;
+}
+
+.about-blurb {
+    width: 80%;
+    display: inline-block;
+    position: relative;
+    top: -20px;
+}
+
+/* BUTTONS
+-----------------------------------------------*/
+
+.button {
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight:800;
+    border-radius: 6px;
+    /*box-shadow: rgba(255, 19, 0, 0.62) 4px 5px 0;*/
+    box-shadow: rgba(255, 184, 0, 0.93) 4px 5px 0;
+    border: none;
+    background-color: #eee;
+    color: #333;
+    position: relative;
+    display: inline-block;
+    margin: 0 5px 20px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.button:hover {
+    background-color: #bbb;
+    color: white;
+}
+.button:active {
+    top: 3px;
+    box-shadow: rgba(255, 19, 0, 0.62) 4px 2px 0;
+}
+.button.selected, .button.selected:hover, .button.selected:active {
+    top: 0;
+    /*box-shadow: rgba(255, 19, 0, 0.62) 4px 5px 0;*/
+    box-shadow: rgba(255, 184, 0, 0.93) 4px 5px 0;
+    background-color: rgb(79, 79, 79);
+    color: white;
+    cursor: default;
+}
+.sub-buttons .button {
+    font-size: 15px;
+    padding: 8px 18px;
+}
+.sub-buttons .a.button {
+    text-decoration: none;
+}
+
+
+/* MIDDLE
+-----------------------------------------------*/
+.about {
+    font-weight: 400;
+}
+
+.middle {
+    font-weight: 700;
+    padding: 30px 0;
+}
+.subtitle {
+    font-size: 21px;
+    /*color: #000000;*/
+    line-height: 34px;
+    padding: 0 15%;
+}
+
+/* SANDWICHES
+-----------------------------------------------*/
+.menu-table td b {
+    display: inline-block;
+    width: 50%;
+    /*text-align: left;*/
+}
+.menu-table td p {
+    /*float: right;*/
+    display: inline-block;
+    width: 50%;
+    /*text-align: right;*/
+}
+.menu-table {
+    margin-top: 20px;
+    width: 100%;
+}
+.menu-table td {
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+/* BEVERAGES
+-----------------------------------------------*/
+.menu.beverages {
+    text-align: center;
+}
+
+.beverages-table {
+    width: 50%;
+}
+
+.beverages-table td {
+    text-align: right;
+}
+.beverages-table tr.title-row td{
+    text-align: center;
+    height: 50px;
+    font-size: 24px;
+}
+.beverages-table td.drink-name {
+    text-align: left;
+}
+
+.drink-name, .drink-sizes {
+    font-weight: bold;
+}
+
+/* HOURS & LOCATION
+-----------------------------------------------*/
+.hours-title {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+#map_canvas {
+    width: 700px;
+    height: 500px;
+    display: inline-block;
+}
+
+p.hours {
+    font-weight: 400;
+}
+
+/* BOTTOM
+-----------------------------------------------*/
+.footer {
+    width: 100%;
+}
+.footer table {
+    display: inline-block;
+}
+.footer table td {
+    text-align: center;
+    width: 140px;
+    font-size: 20px;
+}
+
+ul.social {
+    width: 242px;
+    margin: 80px auto 0;
+    height: 62px;
+}
+ul.social li {
+    float: left;
+    background: url(../images/social.png) left top no-repeat;
+    position: relative;
+    height: 62px;
+    margin-right: 28px;
+}
+ul.social li a {
+    display: block;
+    width: 62px;
+    height: 62px;
+}
+ul.social li.facebook {
+    height: 62px;
+    background-position: 0 0;
+    width: 62px;
+}
+ul.social li.facebook:hover {
+    background-position: 0 -62px;
+}
+ul.social li.twitter {
+    height: 62px;
+    background-position: -90px 0;
+    width: 62px;
+}
+ul.social li.twitter:hover {
+    background-position: -90px -62px;
+}
+ul.social li.youtube {
+    margin-right: 0;
+    height: 62px;
+    background-position: -180px 0;
+    width: 62px;
+}
+ul.social li.youtube:hover {
+    background-position: -180px -62px;
+}
+
+/*.maps {
+    display: inline;
+}*/
+.maps iframe {
+    pointer-events: none;
+}
+
+.yelp {
+    color: #B80B04;
+}
+.facebook {
+    color: #43609C;
+}
+.google-plus {
+    color: #4F4F4F;
+}
+
+/* RESPONSIVE
+-----------------------------------------------*/
+@media screen and (max-width: 980px) {
+    .header {
+        height: 340px;
+    }
+    .header .masthead .icon {
+        font-size: 18px;
+    }
+    .header .masthead .icon.left {
+        padding-right: 20px;
+    }
+    .header .masthead .icon.right {
+        padding-left: 20px;
+    }
+    h1 {
+        font-size: 62px;
+    }
+    h2, .fancy {
+        font-size: 32px;
+    }
+}
+
+@media screen and (max-width: 830px) {
+    .header {
+        height: 320px;
+    }
+    .header .masthead {
+        top: -15px;
+    }
+    .header .masthead .icon {
+        font-size: 14px;
+    }
+    h1 {
+        font-size: 58px;
+    }
+    h2, .fancy {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    h1 {
+        font-size: 50px;
+    }
+    h2, .fancy {
+        font-size: 28px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .about-blurb {
+      top: 6px;
+    }
+    .buttons {
+        position: relative;
+        top: 20px;
+    }
+    .header .masthead, .fancy {
+      top: 0px;
+    }
+    .header .masthead .icon {
+        font-size: 10px;
+    }
+    h1 {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 630px) {
+    h2, .fancy {
+        font-size: 23px;
+    }
+    .about-blurb {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 570px) {
+    .header .masthead .icon i {
+        display: none!important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header {
+        height: 360px;
+    }
+    h1 {
+        font-size: 40px;
+    }
+    .masthead .subhead h2 {
+        display: block;
+    }
+    .masthead .subhead .bullet {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 445px) {
+    .header {
+        height: 350px;
+    }
+    h1 {
+        font-size: 30px;
+    }
+    .button {
+        padding: 7px 17px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .header {
+        height: 440px;
+    }
+}
+@media screen and (max-width: 360px) {
+    .header {
+        height: 520px;
+    }
+}
