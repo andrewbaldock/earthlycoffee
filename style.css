@@ -267,6 +267,7 @@ a {
 
 .beverages-table td {
     text-align: right;
+    min-width: 2.5em;
 }
 .beverages-table tr.title-row td{
     text-align: center;
