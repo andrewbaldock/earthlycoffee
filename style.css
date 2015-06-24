@@ -124,6 +124,11 @@ a {
 .masthead .subhead {
     white-space: nowrap;
 }
+.masthead-inner {
+    display: inline-block;
+    width: 50%;
+    padding: 0 10%;
+}
 
 .masthead .subhead h2 {
     /*border: 1px grey dotted;*/
@@ -200,11 +205,32 @@ a {
     font-weight: 700;
     padding: 30px 0;
 }
+
+.article {
+    min-width: 290px;
+}
 .subtitle {
     font-size: 21px;
     /*color: #000000;*/
     line-height: 34px;
     padding: 0 15%;
+}
+
+/* QUOTE
+-----------------------------------------------*/
+.fa-quote-left {
+    vertical-align: top;
+}
+
+.quote p {
+    display: inline-block;
+    width: 50%;
+    padding: 0 10%;
+    font-size: 24px;
+    font-weight: 400;
+}
+.quote a:hover {
+    color: #FDBC30;
 }
 
 /* SANDWICHES
@@ -352,8 +378,8 @@ ul.social li.youtube:hover {
     .header {
         height: 340px;
     }
-    .header .masthead .icon {
-        font-size: 18px;
+    .fa {
+        font-size: 70px!important;
     }
     .header .masthead .icon.left {
         padding-right: 20px;
@@ -376,8 +402,8 @@ ul.social li.youtube:hover {
     .header .masthead {
         top: -15px;
     }
-    .header .masthead .icon {
-        font-size: 14px;
+    .fa {
+        font-size: 60px!important;
     }
     h1 {
         font-size: 58px;
@@ -396,6 +422,11 @@ ul.social li.youtube:hover {
     }
 }
 
+
+
+
+/* quick and dirty... could be redone better below this point */
+
 @media screen and (max-width: 720px) {
     .about-blurb {
       top: 6px;
@@ -407,8 +438,8 @@ ul.social li.youtube:hover {
     .header .masthead, .fancy {
       top: 0px;
     }
-    .header .masthead .icon {
-        font-size: 10px;
+    .fa {
+        font-size: 45px!important;
     }
     h1 {
         font-size: 40px;
@@ -427,6 +458,9 @@ ul.social li.youtube:hover {
 @media screen and (max-width: 570px) {
     .header .masthead .icon i {
         display: none!important;
+    }
+    .quote p {
+        font-size: 18px;
     }
 }
 
@@ -458,12 +492,13 @@ ul.social li.youtube:hover {
 }
 
 @media screen and (max-width: 420px) {
-    .header {
-        height: 440px;
+    body {
+        padding: 25px;
     }
 }
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 370px) {
     .header {
-        height: 520px;
+        height: 400px;
     }
 }
+

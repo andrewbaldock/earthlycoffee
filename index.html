@@ -59,18 +59,35 @@
           </td>
         </tr>
       </table>
+
+<!--       <div class="masthead">
+        <i class="fa fa-coffee fa-4x"></i>
+        <div class="masthead-inner">
+          <h2>Strong Coffee</h2>
+          <h2 class="bullet"> &#8226; </h2>
+          <h2>Good Food</h2>
+        </div>
+        <i class="fa fa-cutlery fa-4x"></i>
+      </div> -->
+
       <span class="fancy">in Oakland</span>
 
-        <p class="about-blurb">Earthly Coffee is your friendly neighborhood Oakland cafe featuring strong coffee, espresso drinks, tea, pastries, and fresh made salads, sandwiches and soups.   The perfect place to grab a cuppa and a bite with friends.  WIFI hotspot and we do catering as well!</p>
+      <p class="about-blurb">Earthly Coffee is your friendly neighborhood Oakland cafe featuring strong coffee, espresso drinks, tea, pastries, and fresh made salads, sandwiches and soups.   The perfect place to grab a cuppa and a bite with friends.  WIFI hotspot and we do catering as well!</p>
 
       <div class="buttons">
-        <div class="button selected" id="button-menu">Menus</div>
-        <div class="button" id="button-hours">Hours & Location</div>
+        <a href="#scroll" class="button selected" id="button-menu">Menus</a>
+        <a href="#scroll" class="button" id="button-hours">Hours & Location</a>
       </div>
 
-    </div>
+    </div><!--/header-->
 
-    <div class="article middle menus">
+    <div class="article middle quote" id="scroll">
+      <i class="fa fa-quote-left fa-4x"></i>
+      <a href="http://www.yelp.com/biz/earthly-coffee-oakland" target="_blank"><p class="quote-text">The stories of bacon jam are true, this is a thing you should experience in your life.</p></a>
+      <i class="fa fa-quote-right fa-4x"></i>
+    </div><!--/article-->
+
+    <div class="article middle menus" id="menus">
         <div class="menu sandwiches">
             <h2>SANDWICHES</h2>
             <p class="subtitle">$9.50 whole $6 half</p>
@@ -262,7 +279,7 @@
         </div><!-- /beverages -->
     </div><!-- /article -->
 
-    <div class="article middle location">
+    <div class="article middle location" id="hours-location">
       <h2>HOURS</h2>
 
       <b class="hours-title">Monday to Friday</b>
@@ -270,15 +287,21 @@
 
       <b class="hours-title">Saturday & Sunday</b>
       <p class="hours">8:00 am &mdash; 2:00 pm</p>
-      <br>      <br>
+
+      <br>
+      <br>
 
       <h2>PHONE</h2>
-      <p>(510) 282-1399</p><br><br>
+      <p>(510) 282-1399</p>
+
+      <br>
+      <br>
 
       <h2>LOCATION</h2>
       <p>5506 Martin Luther King Jr Way<br>
-      Oakland CA 94609
-      </p><br>
+      Oakland CA 94609</p>
+
+      <br>
 
       <div class="embed-container maps">
         <iframe width="90%" height="500" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=Earthly%20Coffee%20and%20Tea%2C%20Martin%20Luther%20King%20Junior%20Way%2C%20Oakland%2C%20CA%2C%20United%20States&key=AIzaSyBgIr36ZJOoxDufPk5W0n0-K7X-IFGNSDM"></iframe>
@@ -301,16 +324,28 @@
           <td>
             <a target="_blank" class="facebook" href="https://www.facebook.com/earthly510"><i class="fa fa-facebook fa-2x"></i> Facebook</a>
           </td>
-
         </tr>
       </table>
-    </div>
+    </div><!--/footer-->
 
     <br><br>
   <!-- scripts -->
   <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="https://apis.google.com/js/platform.js" async defer></script>
   <script>
+
+    var quotes = [
+      'The stories of bacon jam are true, this is a thing you should experience in your life.',
+      'Visiting California for my second time and this breakfast place made me feel right at home.',
+      'Spicy breakfast burrito, takes Square, free Wi-Fi.',
+    ]
+
+    var setRandQuote = function() {
+      var rand = Math.floor(Math.random() * quotes.length);
+console.log('randQuote# =  '+ rand)
+      $('.quote-text').fadeOut().text(quotes[rand]).fadeIn();
+    }
+
     var setRandBg = function() {
       var bgImageCount = 6; // how many bg images are there?
       var rand = Math.floor(Math.random() * bgImageCount) + 1;
@@ -318,23 +353,30 @@
       $('body').css('background-image', randBg);
     }
 
-    var handleHeaderButtonClick = function(e) {
+    var randomizeContent = function() {
+      setRandQuote();
       setRandBg();
-      var clicked = e.currentTarget.id;
+    }
+
+    var handleHeaderButtonClick = function(e) {
+      randomizeContent();
       $('.header .button').removeClass('selected');
-      $('.middle.menus').hide();
-      if(clicked === 'button-menu') {
+      if(e.currentTarget.id === 'button-menu') {
         $('#button-menu').addClass('selected');
         $('.middle.menus').fadeIn();
-      } else if (clicked === 'button-hours') {
+      } else if (e.currentTarget.id === 'button-hours') {
         $('#button-hours').addClass('selected');
-        $('.middle.location').fadeIn();
+        $('.middle.menus').hide();
       }
     }
 
     $(function() { // on dom ready
+      // init buttons
       $('.header .button').click(handleHeaderButtonClick);
-      setRandBg();
+
+      randomizeContent();
+
+      // prevent map from hijacking scroll
       $('.maps').click(function () {
         $('.maps iframe').css("pointer-events", "auto");
       });
